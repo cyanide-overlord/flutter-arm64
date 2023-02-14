@@ -8,7 +8,7 @@ jobs:
         run: | 
           git clone -b master https://github.com/flutter/flutter.git
           cd flutter
-          export PATH="$PATH:$PWD/flutter"
+          export PATH="$PATH:$PWD/flutter:$PWD"
           flutter doctor
           cd ..
       - name: Upload artifact
