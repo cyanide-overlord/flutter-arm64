@@ -6,7 +6,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
         name: Build Flutter
-        with: aarch64
+        with: 
+          arch: aarch64
           distro: ubuntu_latest
           run: | 
             git clone -b master https://github.com/flutter/flutter.git
