@@ -10,6 +10,7 @@ jobs:
         with: 
           arch: aarch64
           distro: ubuntu18.04
+          dockerRunArgs: --platform linux/amd64
           run: | 
             git clone -b master https://github.com/flutter/flutter.git
             cd flutter
