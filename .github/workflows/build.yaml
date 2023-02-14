@@ -1,14 +1,14 @@
 on: [push]
 jobs:
   build-flutter-arm64:
-    runs-on: ubuntu-latest
+    runs-on: buildjet-2vcpu-ubuntu-2204-arm
     steps:
       - uses: actions/checkout@v3
       - name: Build Flutter
         run: | 
           git clone -b master https://github.com/flutter/flutter.git
           cd flutter
-          export PATH="$PATH:$PWD/flutter:$PWD"
+          export PATH="$PATH:$PWD/flutter:$PWD/bin"
           ls
           chmod +x *
           flutter doctor
