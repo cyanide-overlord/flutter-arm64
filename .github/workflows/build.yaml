@@ -7,13 +7,13 @@ jobs:
       - uses: uraimo/run-on-arch-action@v2
         name: Build Flutter
         with: aarch64
-        distro: ubuntu_latest
-        run: | 
-          git clone -b master https://github.com/flutter/flutter.git
-          cd flutter
-          export PATH="$PATH:$PWD/flutter"
-          flutter doctor
-          cd ..
+          distro: ubuntu_latest
+          run: | 
+            git clone -b master https://github.com/flutter/flutter.git
+            cd flutter
+            export PATH="$PATH:$PWD/flutter"
+            flutter doctor
+            cd ..
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
