@@ -1,7 +1,7 @@
 on: [push]
 jobs:
   build-flutter-arm64:
-    runs-on: buildjet-2vcpu-ubuntu-2204-arm
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Build Flutter
@@ -9,6 +9,7 @@ jobs:
           git clone -b master https://github.com/flutter/flutter.git
           cd flutter
           export PATH="$PATH:$PWD/flutter:$PWD"
+          chmod +x *
           flutter doctor
           cd ..
       - name: Upload artifact
