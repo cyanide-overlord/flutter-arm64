@@ -13,8 +13,9 @@ jobs:
           chmod +x *
           flutter doctor
           cd ..
+          env GZIP=-9 tar cvzf flutter.tar.gz flutter
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
            name: arm64-release
-           path: flutter
+           path: flutter.tar.gz
