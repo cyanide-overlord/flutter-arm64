@@ -8,7 +8,7 @@ jobs:
         name: Build Flutter
         with: aarch64
         distro: ubuntu_latest
-        run: |
+        run: | 
           git clone -b master https://github.com/flutter/flutter.git
           cd flutter
           export PATH="$PATH:$PWD/flutter"
