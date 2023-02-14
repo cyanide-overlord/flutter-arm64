@@ -1,23 +1,16 @@
 on: [push]
 jobs:
   build-flutter-arm64:
-    runs-on: ubuntu-latest
+    runs-on: buildjet-2vcpu-ubuntu-2204-arm
     steps:
       - uses: actions/checkout@v3
-      - uses: uraimo/run-on-arch-action@v2
-        name: Build Flutter
-        id: runcmd
-        with: 
-          arch: aarch64
-          distro: ubuntu_latest
-          githubToken: ${{ github.token }}
-          dockerRunArgs: --platform linux/amd64
-          run: | 
-            git clone -b master https://github.com/flutter/flutter.git
-            cd flutter
-            export PATH="$PATH:$PWD/flutter"
-            flutter doctor
-            cd ..
+      - name: Build Flutter
+        run: | 
+          git clone -b master https://github.com/flutter/flutter.git
+          cd flutter
+          export PATH="$PATH:$PWD/flutter"
+          flutter doctor
+          cd ..
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
