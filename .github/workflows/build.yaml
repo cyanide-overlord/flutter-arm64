@@ -2,7 +2,6 @@ on: [push]
 jobs:
   build-flutter-arm64:
     runs-on: ubuntu-latest
-    architecture: arm64
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -11,6 +10,7 @@ jobs:
         with: 
           arch: aarch64
           distro: ubuntu_latest
+          githubToken: ${{ github.token }}
           dockerRunArgs: --platform linux/amd64
           run: | 
             git clone -b master https://github.com/flutter/flutter.git
