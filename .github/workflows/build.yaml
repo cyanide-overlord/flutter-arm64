@@ -9,6 +9,7 @@ jobs:
           git clone -b master https://github.com/flutter/flutter.git
           cd flutter
           export PATH="$PATH:$PWD/flutter:$PWD"
+          ls
           chmod +x *
           flutter doctor
           cd ..
