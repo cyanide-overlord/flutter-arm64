@@ -16,6 +16,5 @@ jobs:
           env GZIP=-9 tar cvzf flutter.tar.gz flutter
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: flutter.tar.gz
